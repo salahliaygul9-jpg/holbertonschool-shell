@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script lists current directory files showing only after the first dash
+for file in *
+do
+  echo "${file#*-}"
+done
