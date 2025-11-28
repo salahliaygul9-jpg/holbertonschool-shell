@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#
 
 PIDFILE="/var/run/my_process.pid"
 SCRIPT="/root/holbertonschool-shell/processes_and_signals/manage_my_process"
@@ -14,10 +13,8 @@ stop() {
     if [ -f "$PIDFILE" ]; then
         kill "$(cat $PIDFILE)" 2>/dev/null
         rm -f "$PIDFILE"
-        echo "manage_my_process stopped"
-    else
-        echo "manage_my_process is not running"
     fi
+    echo "manage_my_process stopped"
 }
 
 restart() {
@@ -40,3 +37,4 @@ case "$1" in
         echo "Usage: manage_my_process {start|stop|restart}"
         ;;
 esac
+
